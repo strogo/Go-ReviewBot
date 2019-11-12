@@ -1,7 +1,7 @@
 # Golang Starter Pack
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/make-school-labs/golang-starter-pack)](https://goreportcard.com/report/github.com/make-school-labs/golang-starter-pack)
-[![Build Status](https://travis-ci.org/make-school-labs/golang-starter-pack.svg?branch=master)](https://travis-ci.org/make-school-labs/golang-starter-pack)
+[![Go Report Card](https://goreportcard.com/badge/github.com/timomak/Go-ReviewBot)](https://goreportcard.com/report/github.com/timomak/Go-ReviewBot)
+[![Build Status](https://travis-ci.org/timomak/Go-ReviewBot.svg?branch=master)](https://travis-ci.org/timomak/Go-ReviewBot)
 
 Codebase containing real world examples that adhere to the [RealWorld](https://github.com/gothinkster/realworld) API and specifications.
 
