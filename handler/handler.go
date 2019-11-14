@@ -5,6 +5,18 @@ import (
 	"golang-starter-pack/user"
 )
 
+// type Handler struct {
+// 	champStore  champ.Store
+// 	originStore origin.Store
+// }
+
+// func NewHandler(chStore champ.Store, orStore origin.Store) *Handler {
+// 	return &Handler{
+// 		champStore:  chStore,
+// 		originStore: orStore,
+// 	}
+// }
+
 type Handler struct {
 	userStore    user.Store
 	articleStore article.Store
