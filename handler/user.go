@@ -12,10 +12,10 @@ import (
 func (h *Handler) CreateChamp(c echo.Context) error {
 	var u model.Champ
 	req := &champCreateRequest{}
-	if err := h.userStore.Create(&u); err != nil {
+	if err := h.champStore.Create(&u); err != nil {
 		return c.JSON(http.StatusUnprocessableEntity, utils.NewError(err))
 	}
-	return c.JSON(http.StatusCreated, newUserResponse(&u))
+	return c.JSON(http.StatusCreated, newChampResponse(&u))
 }
 
 // GetChamp Returns Champ data
@@ -28,7 +28,7 @@ func (h *Handler) GetChamp(c echo.Context) error {
 	if u == nil {
 		return c.JSON(http.StatusNotFound, utils.NotFound())
 	}
-	return c.JSON(http.StatusOK, newProfileResponse(h.userStore, userIDFromToken(c), u))
+	return c.JSON(http.StatusOK, newChampResponse(&u))
 }
 
 // func (h *Handler) SignUp(c echo.Context) error {

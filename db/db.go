@@ -3,7 +3,7 @@ package db
 import (
 	"fmt"
 
-	"FirstGoProject/model"
+	"../model"
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"

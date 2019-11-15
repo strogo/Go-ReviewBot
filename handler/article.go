@@ -1,18 +1,18 @@
 package handler
 
 import (
-	"errors"
 	"net/http"
-	"strconv"
 
-	"github.com/labstack/echo/v4"
 	"FirstGoProject/model"
 	"FirstGoProject/utils"
+
+	"github.com/labstack/echo/v4"
 )
 
+// CreateOrigin creates a champ origin
 func (h *Handler) CreateOrigin(c echo.Context) error {
 	var a model.Origin
-	req := &articleCreateRequest{}
+	req := &originCreateRequest{}
 	if err := req.bind(c, &a); err != nil {
 		return c.JSON(http.StatusUnprocessableEntity, utils.NewError(err))
 	}

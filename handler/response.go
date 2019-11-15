@@ -1,5 +1,20 @@
 package handler
 
+type champResponse struct {
+	Champ struct {
+		Name string  `json:"name"`
+		Cost    string  `json:"cost"`
+	} `json:"user"`
+}
+
+func newChampResponse(u *model.Champ) *userResponse {
+	r := new(champResponse)
+	r.Champ.Name = u.Name
+	r.Champ.Cost = u.Cost
+	return r
+}
+
+
 // type userResponse struct {
 // 	User struct {
 // 		Username string  `json:"username"`

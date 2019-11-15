@@ -7,6 +7,22 @@ import (
 	// "golang.org/x/crypto/bcrypst"
 )
 
+// Origin  struct
+type Origin struct {
+	gorm.Model
+	Name   string  `gorm:"unique_index;not null"`
+	Bonus  int     `gorm:"not null"`
+	Champs []Champ `gorm:"many2many:origins;"`
+}
+
+// Champ ion model
+type Champ struct {
+	gorm.Model
+	Name    string   `gorm:"unique_index;not null"`
+	Cost    int      `gorm:"not null"`
+	Origins []Origin `gorm:"many2many:origins;"`
+}
+
 // type User struct {
 // 	gorm.Model
 // 	Username   string `gorm:"unique_index;not null"`
@@ -26,13 +42,6 @@ import (
 // 	FollowingID uint `gorm:"primary_key" sql:"type:int not null"`
 // }
 
-// Champ ion model
-type Champ struct {
-	gorm.Model
-	Name    string   `gorm:"unique_index;not null"`
-	Cost    int      `gorm:"not null"`
-	Origins []Origin `gorm:"many2many:origins;"`
-}
 
 // func (u *User) HashPassword(plain string) (string, error) {
 // 	if len(plain) == 0 {
