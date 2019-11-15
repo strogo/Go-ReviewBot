@@ -1,10 +1,10 @@
 package main
 
 import (
-	"golang-starter-pack/db"
-	"golang-starter-pack/handler"
-	"golang-starter-pack/router"
-	"golang-starter-pack/store"
+	"FirstGoProject/db"
+	"FirstGoProject/handler"
+	"FirstGoProject/router"
+	"FirstGoProject/store"
 )
 
 func main() {

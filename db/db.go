@@ -3,9 +3,7 @@ package db
 import (
 	"fmt"
 
-	"os"
-
-	"golang-starter-pack/model"
+	"FirstGoProject/model"
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
@@ -32,7 +30,6 @@ func New() *gorm.DB {
 // 	db.LogMode(false)
 // 	return db
 // }
-
 
 // func DropTestDB() error {
 // 	if err := os.Remove("./../example_test.db"); err != nil {

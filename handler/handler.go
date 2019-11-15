@@ -1,30 +1,32 @@
 package handler
 
 import (
-	"golang-starter-pack/article"
-	"golang-starter-pack/user"
+	"FirstGoProject/champ"
+	"FirstGoProject/origin"
 )
 
-// type Handler struct {
-// 	champStore  champ.Store
-// 	originStore origin.Store
-// }
-
-// func NewHandler(chStore champ.Store, orStore origin.Store) *Handler {
-// 	return &Handler{
-// 		champStore:  chStore,
-// 		originStore: orStore,
-// 	}
-// }
-
+// Handler
 type Handler struct {
-	userStore    user.Store
-	articleStore article.Store
+	champStore  champ.Store
+	originStore origin.Store
 }
 
-func NewHandler(us user.Store, as article.Store) *Handler {
+// NewHandler
+func NewHandler(chStore champ.Store, orStore origin.Store) *Handler {
 	return &Handler{
-		userStore:    us,
-		articleStore: as,
+		champStore:  chStore,
+		originStore: orStore,
 	}
 }
+
+// type Handler struct {
+// 	userStore    user.Store
+// 	articleStore article.Store
+// }
+
+// func NewHandler(us user.Store, as article.Store) *Handler {
+// 	return &Handler{
+// 		userStore:    us,
+// 		articleStore: as,
+// 	}
+// }

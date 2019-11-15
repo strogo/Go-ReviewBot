@@ -1,10 +1,10 @@
 package model
 
 import (
-	"errors"
+	// "errors"
 
 	"github.com/jinzhu/gorm"
-	"golang.org/x/crypto/bcrypt"
+	// "golang.org/x/crypto/bcrypst"
 )
 
 // type User struct {
@@ -29,9 +29,9 @@ import (
 // Champ ion model
 type Champ struct {
 	gorm.Model
-	Name   string `gorm:"unique_index;not null"`
-	Cost   int `gorm:"not null"`
-	Origins  []Origin `gorm:"many2many:origins;"`
+	Name    string   `gorm:"unique_index;not null"`
+	Cost    int      `gorm:"not null"`
+	Origins []Origin `gorm:"many2many:origins;"`
 }
 
 // func (u *User) HashPassword(plain string) (string, error) {

@@ -7,19 +7,23 @@ import (
 func (h *Handler) Register(v1 *echo.Group) {
 	champ := v1.Group("/champion")
 	champ.POST("/create", h.CreateChamp)
+
+	origin := v1.Group("/origin")
+	origin.POST("/create" h.CreateOrigin)
+	
 	// jwtMiddleware := middleware.JWT(utils.JWTSecret)
-	guestUsers := v1.Group("/users")
-	guestUsers.POST("", h.SignUp)
-	guestUsers.POST("/login", h.Login)
+	// guestUsers := v1.Group("/users")
+	// guestUsers.POST("", h.SignUp)
+	// guestUsers.POST("/login", h.Login)
 
-	user := v1.Group("/user", jwtMiddleware)
-	user.GET("", h.CurrentUser)
-	user.PUT("", h.UpdateUser)
+	// user := v1.Group("/user", jwtMiddleware)
+	// user.GET("", h.CurrentUser)
+	// user.PUT("", h.UpdateUser)
 
-	profiles := v1.Group("/profiles", jwtMiddleware)
-	profiles.GET("/:username", h.GetProfile)
-	profiles.POST("/:username/follow", h.Follow)
-	profiles.DELETE("/:username/follow", h.Unfollow)
+	// profiles := v1.Group("/profiles", jwtMiddleware)
+	// profiles.GET("/:username", h.GetProfile)
+	// profiles.POST("/:username/follow", h.Follow)
+	// profiles.DELETE("/:username/follow", h.Unfollow)
 
 	// articles := v1.Group("/articles", middleware.JWTWithConfig(
 	// 	middleware.JWTConfig{

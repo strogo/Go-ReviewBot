@@ -4,21 +4,31 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
-	"golang-starter-pack/model"
-	"golang-starter-pack/utils"
+	"FirstGoProject/model"
+	"FirstGoProject/utils"
 )
 
 // CreateChamp Request
 func (h *Handler) CreateChamp(c echo.Context) error {
 	var u model.Champ
 	req := &champCreateRequest{}
-	if err := req.bind(c, &u); err != nil {
-		return c.JSON(http.StatusUnprocessableEntity, utils.NewError(err))
-	}
 	if err := h.userStore.Create(&u); err != nil {
 		return c.JSON(http.StatusUnprocessableEntity, utils.NewError(err))
 	}
 	return c.JSON(http.StatusCreated, newUserResponse(&u))
+}
+
+// GetChamp Returns Champ data
+func (h *Handler) GetChamp(c echo.Context) error {
+	name := c.Param("name")
+	u, err := h.userStore.GetByName(name)
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, utils.NewError(err))
+	}
+	if u == nil {
+		return c.JSON(http.StatusNotFound, utils.NotFound())
+	}
+	return c.JSON(http.StatusOK, newProfileResponse(h.userStore, userIDFromToken(c), u))
 }
 
 // func (h *Handler) SignUp(c echo.Context) error {

@@ -1,8 +1,8 @@
-// package user
+package user
 
-// import (
-// 	"golang-starter-pack/model"
-// )
+import (
+	"FirstGoProject/model"
+)
 
 // type Store interface {
 // 	GetByID(uint) (*model.User, error)
@@ -14,3 +14,10 @@
 // 	RemoveFollower(user *model.User, followerID uint) error
 // 	IsFollower(userID, followerID uint) (bool, error)
 // }
+
+// Store interface for Champ
+type Store interface {
+	GetByName(string) (*model.Champ, error)
+	Create(*model.Champ) error
+	Update(*model.Champ) error
+}

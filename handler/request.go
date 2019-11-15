@@ -7,6 +7,17 @@ type champCreateRequest struct {
 	} `json:"champ"`
 }
 
+
+type originCreateRequest struct {
+	Origin struct {
+		Title       string   `json:"title" validate:"required"`
+		Description string   `json:"description" validate:"required"`
+		Body        string   `json:"body" validate:"required"`
+		Tags        []string `json:"tagList, omitempty"`
+	} `json:"article"`
+}
+
+
 // type userUpdateRequest struct {
 // 	User struct {
 // 		Username string `json:"username"`
